@@ -1,1 +1,1 @@
-# News-Scraper-Gitignore
+# News-Scraper
