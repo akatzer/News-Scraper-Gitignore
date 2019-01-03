@@ -19,8 +19,10 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/homeworkdb", { useNewUrlParser: true });
 
 app.get("/scrape", function (req, res) {
+  
   axios.get("https://www.nytimes.com/section/sports").then(function (response) {
     var $ = cheerio.load(response.data);
+   
     $("a.story-link").each(function (i, element) {
       var result = {};
       result.link = $(this).attr("href");
@@ -37,6 +39,16 @@ app.get("/scrape", function (req, res) {
     res.send("Scrape Complete");
   });
 });
+
+app.get("/delete", function (req, res) {
+  db.Article.deleteMany({})
+  .then(function(dbArticle) {
+    res.json(dbArticle);
+  })
+  .catch(function (err) {
+    res.json(err);
+  });
+})
 
 app.get("/articles", function (req, res) {
   db.Article.find({})

@@ -67,7 +67,14 @@ $(document).on("click", "#deletenote", function () {
 $("#scrape").on("click", function() {
   $.ajax({
     method: "GET",
+    url: "/delete/"
+  })
+  $.ajax({
+    method: "GET",
     url: "/scrape/"
   })
-  location.reload(true)
+  $("html").text("Refreshing articles, the page will reload in 3 seconds.")
+  setTimeout(function(){
+    location.reload(true);
+  }, 3000);
 })
