@@ -11,4 +11,4 @@ Local Setup:
 - Type "node server.js" into the console to start up the server.
 - Once the server is up and running navigate to http://localhost:3000/ to access the application.
 
-Heroku Link: (If you would rather not have to set it up locally): https://damp-escarpment-81110.herokuapp.com/
+Heroku Link: (If you would rather not have to set it up locally): https://vast-dawn-40796.herokuapp.com/
