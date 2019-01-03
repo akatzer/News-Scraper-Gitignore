@@ -4,11 +4,11 @@ Overview: This scraping application pulls the 20 most recent articles from the N
 
 Local Setup:
 
-Clone the GitHub repository (https://github.com/akatzer/News-Scraper-Gitignore).
-Once you have your code editor of choice opened up navigate to this new repo and open it in your terminal.
-Run a npm install to ensure you have all the necessary packages installed to run it.
-Be sure to have mongod and mongo running in your terminal.
-Type "node server.js" into the console to start up the server.
-Once the server is up and running navigate to http://localhost:3000/ to access the application.
+- Clone the GitHub repository (https://github.com/akatzer/News-Scraper-Gitignore).
+- Once you have your code editor of choice opened up navigate to this new repo and open it in your terminal.
+- Run a npm install to ensure you have all the necessary packages installed to run it.
+- Be sure to have mongod and mongo running in your terminal.
+- Type "node server.js" into the console to start up the server.
+- Once the server is up and running navigate to http://localhost:3000/ to access the application.
 
 Heroku Link: (If you would rather not have to set it up locally): https://damp-escarpment-81110.herokuapp.com/
