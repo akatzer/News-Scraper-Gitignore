@@ -7,7 +7,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
@@ -18,9 +18,15 @@ app.use(express.static("public"));
 
 
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/homeworkdb";
+var MONGODB_URI = process.env.MONGODB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/homeworkdb";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, function(err, res){
+  if (err) {
+    console.log('error connectiong to: ' + MONGODB_URI + '. ' + err);
+  } else {
+    console.log('Succeeded connected to: ' + MONGODB_URI);
+  }
+})
 
 
 app.get("/scrape", function (req, res) {
