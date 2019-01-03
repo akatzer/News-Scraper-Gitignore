@@ -16,7 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/homeworkdb", { useNewUrlParser: true });
+
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/homeworkdb";
+
+mongoose.connect(MONGODB_URI);
+
 
 app.get("/scrape", function (req, res) {
   
